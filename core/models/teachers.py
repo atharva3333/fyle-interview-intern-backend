@@ -11,3 +11,7 @@ class Teacher(db.Model):
 
     def __repr__(self):
         return '<Teacher %r>' % self.id
+
+    @classmethod
+    def get_teacher_by_id(cls, teacher_id):
+        return cls.query.filter_by(id=teacher_id).first()
